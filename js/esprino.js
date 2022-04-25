@@ -224,48 +224,40 @@ if (drive == "B"){
     step = 4;
     counting = true;
  }
- else if (drive == "PU"){
-    // Pan Up
-    smarti.setLEDs([50,0,50],[60,0,50]);
-    smarti.setMotor(3,0.5);    
-    step = 4;
-    counting = true;
-    setTimeout (function() {
-        smarti.setMotor(3, 0);
-    }, 50);
- }
- 
+
+ // === SERVO ARMS ===
  else if (drive == "L0") {
-   // Servo Left 0
+   // Servo Left 0% - 80
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(1,0);
+   smarti.setServo(1,80);
 }
  else if (drive == "L50") {
-   // Servo Left 50
+   // Servo Left 50% - 65
+   smarti.setLEDs([0,50,0],[0,50,0]);
+   smarti.setServo(1,65);
+}
+else if (drive == "L100") {
+   // Servo Left 100% - 50
    smarti.setLEDs([0,50,0],[0,50,0]);
    smarti.setServo(1,50);
 }
-else if (drive == "L100") {
-   // Servo Left 50
-   smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(1,85);
-}
 else if (drive == "R0") {
-   // Servo Right 0
+   // Servo Right 0% - 20
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(2,0);
+   smarti.setServo(2,20);
 }
 else if (drive == "R50") {
-   // Servo Right 50
+   // Servo Right 50% - 35
+   smarti.setLEDs([0,50,0],[0,50,0]);
+   smarti.setServo(2,35);
+}
+else if (drive == "R100") {
+   // Servo Right 100% - 50
    smarti.setLEDs([0,50,0],[0,50,0]);
    smarti.setServo(2,50);
 }
-else if (drive == "R100") {
-   // Servo Right 50
-   smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(2,85);
-}
  
+// == STOP ==
  else if (drive == "S"){
  smarti.setLEDs([0,50,0],[0,50,0]);
  smarti.setMotor(1,0);
