@@ -100,21 +100,21 @@
     <div class="btn-group">
       <!-- Row 1 -->
     <button class="button" style="width: 50%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
+    <button class="button" style="width: 25%;" id="lefthand0"><img height="50%" src="/images/left-hand-open.svg"></button>
+    <button class="button" style="width: 25%;" id="righthand0"><img height="50%" src="/images/right-hand-open.svg"></button>
 
     <!-- Row 2 -->
     <button class="button" style="width: 12.5%;" id="leftBtn"><img width="60%" src="/images/left.svg"></button>
     <button class="button" style="width: 12.5%;" id="sleftBtn"><img width="60%" src="/images/s_left.svg"></button>
     <button class="button" style="width: 12.5%;" id="srightBtn"><img width="60%" src="/images/s_right.svg"></button>
     <button class="button" style="width: 12.5%;" id="rightBtn"><img width="60%" src="/images/right.svg"></button>
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button> 
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button> 
+    <button class="button" style="width: 25%;" id="lefthand50"><img height="50%" src="/images/left-hand-half.svg"></button> 
+    <button class="button" style="width: 25%;" id="righthand50"><img height="50%" src="/images/right-hand-half.svg"></button> 
 
     <!-- Row 3 -->
     <button class="button" style="width: 50%;" id="downBtn"><img height="50%" src="/images/down.svg"></button>
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button> 
-    <button class="button" style="width: 25%;" id="upBtn"><img height="50%" src="/images/up.svg"></button> 
+    <button class="button" style="width: 25%;" id="lefthand100"><img height="50%" src="/images/left-hand-closed.svg"></button> 
+    <button class="button" style="width: 25%;" id="righthand100"><img height="50%" src="/images/right-hand-closed.svg"></button> 
     </div>
     
     
@@ -127,15 +127,20 @@
         Puck.write('load();\n');
   
     });
-  // ==== Original Functions - Smartibot =====
+  
   document.getElementById("upBtn").onclick = function() {goDrive("F")};
   document.getElementById("downBtn").onclick = function() {goDrive("B")};
   document.getElementById("leftBtn").onclick = function() {goDrive("L")};
   document.getElementById("sleftBtn").onclick = function() {goDrive("SL")};
   document.getElementById("rightBtn").onclick = function() {goDrive("R")};
   document.getElementById("srightBtn").onclick = function() {goDrive("SR")}; 
-  document.getElementById("panUpBtn").onclick = function() {goDrive("PU")};
-  document.getElementById("panDownBtn").onclick = function() {goDrive("PD")};
+  
+  document.getElementById("lefthand0").onclick = function() {goDrive("L0")};
+  document.getElementById("lefthand50").onclick = function() {goDrive("L50")};
+  document.getElementById("lefthand100").onclick = function() {goDrive("L100")};
+  document.getElementById("righthand0").onclick = function() {goDrive("R0")};
+  document.getElementById("righthand50").onclick = function() {goDrive("R50")};
+  document.getElementById("righthand100").onclick = function() {goDrive("R100")};
   
   function goDrive(dir) {
     Puck.write("go(\""+ dir + "\");\n");
