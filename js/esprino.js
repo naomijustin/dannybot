@@ -179,8 +179,8 @@ function go(drive){
 if (drive == "B"){
      // Back/Down
     smarti.setLEDs([50,0,50],[50,0,50]);
-    smarti.setMotor(1,0.6);
-    smarti.setMotor(2,0.6);
+    smarti.setMotor(3,0.6); // **** Tested Tilt
+    smarti.setMotor(4,0.6); // **** Tested Tilt
     step = 4;
     counting = true;
  }
@@ -219,8 +219,8 @@ if (drive == "B"){
  else if (drive == "F"){
     // Up
     smarti.setLEDs([50,0,50],[60,0,50]);
-    smarti.setMotor(1,-0.6);
-    smarti.setMotor(2,-0.6);
+    smarti.setMotor(3,-0.6); // **** Tested Tilt
+    smarti.setMotor(4,-0.6); // **** Tested Tilt
     step = 4;
     counting = true;
  }
