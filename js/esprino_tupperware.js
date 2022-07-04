@@ -1,4 +1,4 @@
-// ====== TUPPERWARE BOT FOR ESPRINO ========
+// ====== TUPPERWARE BOT WITH ARMS FOR ESPRINO ========
 
 var smarti = require("Smartibot");
 var counting = false;
@@ -9,16 +9,16 @@ function go(drive){
 if (drive == "B"){
      // Back/Down
     smarti.setLEDs([50,0,50],[50,0,50]);
-    smarti.setMotor(1,0.6);
-    smarti.setMotor(2,0.6);
+    smarti.setMotor(1,-0.7); //Back
+    smarti.setMotor(2,0.7); //Back    
     step = 4;
     counting = true;
  }
  if (drive == "R"){
      // Right
     smarti.setLEDs([50,0,0],[50,0,0]);
-    smarti.setMotor(1,-0.7);
-    smarti.setMotor(2,0.7);
+    smarti.setMotor(1,-0.6); //Rght
+    smarti.setMotor(2,-0.6); // Right
     step = 2;
     counting = true;
  }
@@ -31,10 +31,9 @@ if (drive == "B"){
     counting = true;
  }
  if (drive == "L"){
-     // Left
     smarti.setLEDs([0,0,50],[0,0,50]);
-    smarti.setMotor(1,0.7);
-    smarti.setMotor(2,-0.7);
+    smarti.setMotor(1,0.6); //Left
+    smarti.setMotor(2,0.6); //Left
     step = 2;
     counting = true;
     
@@ -49,8 +48,8 @@ if (drive == "B"){
  else if (drive == "F"){
     // Up
     smarti.setLEDs([50,0,50],[60,0,50]);
-    smarti.setMotor(1,-0.6); 
-    smarti.setMotor(2,-0.6);
+    smarti.setMotor(1,0.7); //Forward
+    smarti.setMotor(2,-0.7); //Forward    
     step = 4;
     counting = true;
  }
