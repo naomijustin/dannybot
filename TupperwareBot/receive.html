@@ -1,3 +1,5 @@
+<!-- Tupperware Bot -->
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -52,8 +54,6 @@
     cursor: pointer;
     float: left;
   }
-
-  
   
   .button:hover {background-color: #6D2475}
   
@@ -112,7 +112,7 @@
       <button class="button" style="width: 10%;" id="rightBtn"><img width="60%" src="/images/right.svg"></button>
       <button class="button" style="width: 20%;" id="lefthand50"><img height="50%" src="/images/left-hand-half.svg"></button> 
       <button class="button" style="width: 20%;" id="righthand50"><img height="50%" src="/images/right-hand-half.svg"></button>
-      <button class="button" style="width: 20%;" id="tiltMiddle"><img height="30%" src="/images/PhoneMiddle.svg"></button> 
+      <button class="button" style="width: 20%;" id="stop"><img height="30%" src="/images/circle-stop-solid.svg"></button> 
 
       <!-- Row 3 -->
       <button class="button" style="width: 40%;" id="downBtn"><img height="50%" src="/images/down.svg"></button>
@@ -145,6 +145,10 @@
   document.getElementById("righthand0").onclick = function() {goDrive("R0")};
   document.getElementById("righthand50").onclick = function() {goDrive("R50")};
   document.getElementById("righthand100").onclick = function() {goDrive("R100")};
+
+  document.getElementById("tiltUp").onclick = function() {goDrive("TU")};
+  document.getElementById("tiltDown").onclick = function() {goDrive("TD")};
+  document.getElementById("stop").onclick = function() {goDrive("S")};
   
   function goDrive(dir) {
     Puck.write("go(\""+ dir + "\");\n");

@@ -1,0 +1,132 @@
+ <!-- Tupperware Bot -->
+
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="apple-mobile-web-app-capable" content="yes"/>
+      <meta name="mobile-web-app-capable" content="yes"/>
+      <meta name=apple-mobile-web-app-status-bar-style content="black">
+    
+      <link rel="icon" href="favicon.ico">
+      <link rel="manifest" href="webapp_manifest.json">
+    </head>
+    
+    <style>
+    .btn-groupV .button {
+      background-color: #321339; 
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 32px;
+      cursor: pointer;
+      width: 100%;
+      height: 33%;
+      display: block;
+    }
+    
+    .btn-groupH .button {
+      background-color: #321339;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 25%;
+      height: 33%;
+      font-size: 16px;
+      cursor: pointer;
+      float: left;
+    }
+    
+    .btn-group {
+    width: 100%;
+    }
+    .btn-group .button {
+        background-color: #321339;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: 50%;
+        height: 33%;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+    
+    .button:hover {background-color: #6D2475}
+    
+    .button:active {
+      background-color: #19ADE5;
+    }
+    
+    .input-res
+    {
+         
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      font: 26px/1 'Montserrat', sans-serif;
+      color: #45294C;
+    
+      width: 100%;
+      max-width: 2048px;
+      background-color: #CECCC6;
+      border: none;
+      padding: 10px 11px 11px 11px;
+      border-radius: 3px;
+      box-shadow: none;
+      outline: none;
+      margin: 0;
+      box-sizing: border-box;
+         
+    }
+        
+    </style>
+    
+    <body>
+    
+        <div class="btn-group">
+            <!-- Row 1 -->
+            <button class="button" onclick="sendDrive('F');" style="width: 40%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
+            <button class="button" onclick="sendDrive('L0');" style="width: 20%;" id="lefthand0"><img height="50%" src="/images/left-hand-open.svg"></button>
+            <button class="button" onclick="sendDrive('R0');" style="width: 20%;" id="righthand0"><img height="50%" src="/images/right-hand-open.svg"></button>
+            <button class="button" onclick="sendDrive('PU');" style="width: 20%;" id="tiltUp"><img height="30%" src="/images/PhoneUp.svg"></button>
+            
+      
+            <!-- Row 2 -->
+            <button class="button" onclick="sendDrive('L');" style="width: 10%;" id="leftBtn"><img width="60%" src="/images/left.svg"></button>
+            <button class="button" onclick="sendDrive('SL');" style="width: 10%;" id="sleftBtn"><img width="60%" src="/images/s_left.svg"></button>
+            <button class="button" onclick="sendDrive('SR');" style="width: 10%;" id="srightBtn"><img width="60%" src="/images/s_right.svg"></button>
+            <button class="button" onclick="sendDrive('R');" style="width: 10%;" id="rightBtn"><img width="60%" src="/images/right.svg"></button>
+            <button class="button" onclick="sendDrive('L50');" style="width: 20%;" id="lefthand50"><img height="50%" src="/images/left-hand-half.svg"></button> 
+            <button class="button" onclick="sendDrive('R50');" style="width: 20%;" id="righthand50"><img height="50%" src="/images/right-hand-half.svg"></button>
+            <button class="button" onclick="sendDrive('S');" style="width: 20%;" id="stop"><img height="30%" src="/images/circle-stop-solid.svg"></button> 
+      
+            <!-- Row 3 -->
+            <button class="button" onclick="sendDrive('B');" style="width: 40%;" id="downBtn"><img height="50%" src="/images/down.svg"></button>
+            <button class="button" onclick="sendDrive('L100');" style="width: 20%;" id="lefthand100"><img height="50%" src="/images/left-hand-closed.svg"></button> 
+            <button class="button" onclick="sendDrive('R100');" style="width: 20%;" id="righthand100"><img height="50%" src="/images/right-hand-closed.svg"></button>
+            <button class="button" onclick="sendDrive('PD');" style="width: 20%;" id="tiltDown"><img height="30%" src="/images/PhoneDown.svg"></button> 
+          </div>
+
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
+    <script>
+    function sendDrive(direction){
+    var pubnub = new PubNub({publishKey : "pub-c-2290b58f-e3e6-4116-8212-1243e3d03790", subscribeKey : "sub-c-b81cceba-b5a3-11ec-8a86-d29fac035801"});
+        pubnub.publish({ channel : "drive", message : direction });
+        console.log(direction);
+    }
+    
+    </script>
+    
+    </script>
+        
+    </body>	
+    
+    </html>
