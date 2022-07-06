@@ -1,4 +1,4 @@
-// ====== TUPPERWARE BOT WITH ARMS FOR ESPRINO ========
+// ====== TUPPERWARE BOT WITHOUT ARMS FOR ESPRINO ========
 
 var smarti = require("Smartibot");
 var counting = false;
@@ -82,8 +82,6 @@ else if (drive == "TD") {
  smarti.setMotor(2,0);
  smarti.setMotor(3,0);
  smarti.setMotor(4,0);
- smarti.setServo(1,0);
- smarti.setServo(2,0);
  } 
 }
 
