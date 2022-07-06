@@ -1,0 +1,171 @@
+<!-- Tupperware Bot -->
+
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+    <!--<link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="webapp_manifest.json">-->
+  <style>
+  .btn-groupV .button {
+    background-color: #321339; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
+    width: 100%;
+    height: 33%;
+    display: block;
+  }
+  
+  .btn-groupH .button {
+    background-color: #321339;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 25%;
+    height: 33%;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+  }
+
+  .btn-group {
+    width: 100%;
+  }
+  .btn-group .button {
+    background-color: #321339;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    height: 33%;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+  }
+  
+  .button:hover {background-color: #6D2475}
+  
+  .button:active {
+    background-color: #19ADE5;
+  }
+  
+  .input-res
+  {
+       
+       box-sizing: border-box;
+         -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: 26px/1 'Montserrat', sans-serif;
+    color: #45294C;
+  
+    width: 100%;
+    max-width: 2048px;
+    background-color: #CECCC6;
+    border: none;
+    padding: 10px 11px 11px 11px;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    box-sizing: border-box;
+       
+  }
+  
+  
+  </style></head>
+  
+  
+  
+  
+  
+  <body>
+  <script src="/js/puck.js"></script>
+  <input type="text" class="input-res" id="subInput" placeholder="Paste PubNub subscriber key here and press return" value="sub-c-b81cceba-b5a3-11ec-8a86-d29fac035801">
+  
+
+
+    <div class="btn-group">
+      <!-- Row 1 -->
+      <button class="button" style="width: 60%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
+      <button class="button" style="width: 40%;" id="tiltUp"><img height="30%" src="/images/PhoneUp.svg"></button>
+      
+
+      <!-- Row 2 -->
+      <button class="button" style="width: 15%;" id="leftBtn"><img width="60%" src="/images/left.svg"></button>
+      <button class="button" style="width: 15%;" id="sleftBtn"><img width="60%" src="/images/s_left.svg"></button>
+      <button class="button" style="width: 15%;" id="srightBtn"><img width="60%" src="/images/s_right.svg"></button>
+      <button class="button" style="width: 15%;" id="rightBtn"><img width="60%" src="/images/right.svg"></button>
+      <button class="button" style="width: 40%;" id="stop"><img height="30%" src="/images/circle-stop-solid.svg"></button> 
+
+      <!-- Row 3 -->
+      <button class="button" style="width: 60%;" id="downBtn"><img height="50%" src="/images/down.svg"></button>
+      <button class="button" style="width: 40%;" id="tiltDown"><img height="30%" src="/images/PhoneDown.svg"></button> 
+    </div>
+    
+    
+  
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
+  <script>
+  
+    subInput.addEventListener('keypress', function (e) {
+        (e.keyCode || e.charCode) === 13 && pubConn(subInput.value);
+        Puck.write('load();\n');
+  
+    });
+  
+  document.getElementById("upBtn").onclick = function() {goDrive("F")};
+  document.getElementById("downBtn").onclick = function() {goDrive("B")};
+  document.getElementById("leftBtn").onclick = function() {goDrive("L")};
+  document.getElementById("sleftBtn").onclick = function() {goDrive("SL")};
+  document.getElementById("rightBtn").onclick = function() {goDrive("R")};
+  document.getElementById("srightBtn").onclick = function() {goDrive("SR")}; 
+  
+  document.getElementById("lefthand0").onclick = function() {goDrive("L0")};
+  document.getElementById("lefthand50").onclick = function() {goDrive("L50")};
+  document.getElementById("lefthand100").onclick = function() {goDrive("L100")};
+  document.getElementById("righthand0").onclick = function() {goDrive("R0")};
+  document.getElementById("righthand50").onclick = function() {goDrive("R50")};
+  document.getElementById("righthand100").onclick = function() {goDrive("R100")};
+
+  document.getElementById("tiltUp").onclick = function() {goDrive("TU")};
+  document.getElementById("tiltDown").onclick = function() {goDrive("TD")};
+  document.getElementById("stop").onclick = function() {goDrive("S")};
+  
+  function goDrive(dir) {
+    Puck.write("go(\""+ dir + "\");\n");
+    console.log("go(\""+ dir + "\");\n");
+  }
+  
+  
+    function pubConn(sub){
+    
+  
+  
+    var pubnub = new PubNub({ subscribeKey : sub}); // Your PubNub keys here. Get them from https://dashboard.pubnub.com.
+    var channel = 'drive';
+    pubnub.subscribe({channels: [channel]}); // Subscribe to a channel.
+    console.log("SUBSCRIBED");
+    pubnub.addListener({message: function(m) {
+    goDrive(m.message);
+            
+      }});
+  
+  };</script>
+  
+  
+  
+  
+  </body></html>
