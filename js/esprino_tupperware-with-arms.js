@@ -17,7 +17,7 @@ if (drive == "B"){
  if (drive == "R"){
      // Right
     smarti.setLEDs([50,0,0],[50,0,0]);
-    smarti.setMotor(1,-0.6); //Rght
+    smarti.setMotor(1,-0.6); // Right
     smarti.setMotor(2,-0.6); // Right
     step = 2;
     counting = true;
@@ -38,12 +38,12 @@ if (drive == "B"){
     counting = true;
     
  }
-  if (drive == "SL"){
- smarti.setLEDs([50,0,50],[50,0,50]);
- smarti.setMotor(1,0.55);
- smarti.setMotor(2,-0.55);
+ if (drive == "SL"){
+   smarti.setLEDs([50,0,50],[50,0,50]);
+   smarti.setMotor(1,0.55);
+   smarti.setMotor(2,-0.55);
    step = 1;
- counting = true;
+   counting = true;
  }
  else if (drive == "F"){
     // Up
@@ -56,9 +56,9 @@ if (drive == "B"){
 
  // === SERVO ARMS ===
  else if (drive == "L0") {
-   // Servo Left 0% - 80
+   // Servo Left 0% - 50
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(1,80);
+   smarti.setServo(1,50);
 }
  else if (drive == "L50") {
    // Servo Left 50% - 65
@@ -66,14 +66,14 @@ if (drive == "B"){
    smarti.setServo(1,65);
 }
 else if (drive == "L100") {
-   // Servo Left 100% - 50
+   // Servo Left 100% - 80
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(1,50);
+   smarti.setServo(1,80);
 }
 else if (drive == "R0") {
-   // Servo Right 0% - 20
+   // Servo Right 0% - 50
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(2,20);
+   smarti.setServo(2,50);
 }
 else if (drive == "R50") {
    // Servo Right 50% - 35
@@ -81,9 +81,9 @@ else if (drive == "R50") {
    smarti.setServo(2,35);
 }
 else if (drive == "R100") {
-   // Servo Right 100% - 50
+   // Servo Right 100% - 20
    smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(2,50);
+   smarti.setServo(2,20);
 }
 
 // === TILT PHONE ===
