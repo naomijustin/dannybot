@@ -114,8 +114,8 @@ else if (drive == "TD") {
  smarti.setMotor(2,0);
  smarti.setMotor(3,0);
  smarti.setMotor(4,0);
- smarti.setServo(1,0);
- smarti.setServo(2,0);
+ smarti.setServo(1,65);
+ smarti.setServo(2,35);
  } 
 }
 
