@@ -7,7 +7,7 @@ var step = 2;
 
 function go(drive){
 if (drive == "B"){
-     // Back/Down
+     // Back
     smarti.setLEDs([50,0,50],[50,0,50]);
     smarti.setMotor(1,-0.7); //Back
     smarti.setMotor(2,0.7); //Back    
@@ -22,31 +22,15 @@ if (drive == "B"){
     step = 2;
     counting = true;
  }
-
-  if (drive == "SR"){
-    smarti.setLEDs([50,0,50],[60,0,50]);
-    smarti.setMotor(1,-0.55);
-    smarti.setMotor(2,0.55);
-    step = 1;
-    counting = true;
- }
  if (drive == "L"){
     smarti.setLEDs([0,0,50],[0,0,50]);
     smarti.setMotor(1,0.6); //Left
     smarti.setMotor(2,0.6); //Left
     step = 2;
     counting = true;
-    
- }
- if (drive == "SL"){
-   smarti.setLEDs([50,0,50],[50,0,50]);
-   smarti.setMotor(1,0.55);
-   smarti.setMotor(2,-0.55);
-   step = 1;
-   counting = true;
  }
  else if (drive == "F"){
-    // Up
+    // Forward
     smarti.setLEDs([50,0,50],[60,0,50]);
     smarti.setMotor(1,0.7); //Forward
     smarti.setMotor(2,-0.7); //Forward    
@@ -65,11 +49,6 @@ if (drive == "B"){
    smarti.setLEDs([0,50,0],[0,50,0]);
    smarti.setServo(1,65);
 }
-else if (drive == "L100") {
-   // Servo Left 100% - 80
-   smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(1,80);
-}
 else if (drive == "R0") {
    // Servo Right 0% - 50
    smarti.setLEDs([0,50,0],[0,50,0]);
@@ -79,11 +58,6 @@ else if (drive == "R50") {
    // Servo Right 50% - 35
    smarti.setLEDs([0,50,0],[0,50,0]);
    smarti.setServo(2,35);
-}
-else if (drive == "R100") {
-   // Servo Right 100% - 20
-   smarti.setLEDs([0,50,0],[0,50,0]);
-   smarti.setServo(2,20);
 }
 
 // === TILT PHONE ===
