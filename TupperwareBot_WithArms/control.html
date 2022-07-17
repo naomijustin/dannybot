@@ -16,7 +16,7 @@
     .btn-groupV .button {
       background-color: #321339; 
       color: white;
-      padding: 15px 32px;
+      padding: 30px 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -30,7 +30,7 @@
     .btn-groupH .button {
       background-color: #321339;
       color: white;
-      padding: 15px 32px;
+      padding: 30px 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -47,7 +47,7 @@
     .btn-group .button {
         background-color: #321339;
         color: white;
-        padding: 15px 32px;
+        padding: 30px 10px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -64,9 +64,7 @@
       background-color: #19ADE5;
     }
     
-    .input-res
-    {
-         
+    .input-res {         
       box-sizing: border-box;
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -83,8 +81,12 @@
       box-shadow: none;
       outline: none;
       margin: 0;
-      box-sizing: border-box;
-         
+      box-sizing: border-box;         
+    }
+    img {
+      max-width: 80px;
+      height: 100%;
+      width: 100%;
     }
         
     </style>
@@ -93,26 +95,24 @@
     
         <div class="btn-group">
             <!-- Row 1 -->
-            <button class="button" onclick="sendDrive('F');" style="width: 40%;" id="upBtn"><img height="50%" src="/images/up.svg"></button>
-            <button class="button" onclick="sendDrive('L0');" style="width: 20%;" id="lefthand0"><img height="50%" src="/images/left-hand-open.svg"></button>
-            <button class="button" onclick="sendDrive('R0');" style="width: 20%;" id="righthand0"><img height="50%" src="/images/right-hand-open.svg"></button>
-            <button class="button" onclick="sendDrive('TU');" style="width: 20%;" id="tiltUp"><img height="30%" src="/images/PhoneUp.svg"></button>
+            <button class="button" onclick="sendDrive('F');" style="width: 50%;" id="upBtn"><img src="/images/up.svg"></button>
+            <button class="button" onclick="sendDrive('L0');" style="width: 25%;" id="lefthand0"><img src="/images/left-hand-open.svg"></button>
+            <button class="button" onclick="sendDrive('R0');" style="width: 25%;" id="righthand0"><img src="/images/right-hand-open.svg"></button>
+            
             
       
             <!-- Row 2 -->
-            <button class="button" onclick="sendDrive('L');" style="width: 10%;" id="leftBtn"><img width="60%" src="/images/left.svg"></button>
-            <button class="button" onclick="sendDrive('SL');" style="width: 10%;" id="sleftBtn"><img width="60%" src="/images/s_left.svg"></button>
-            <button class="button" onclick="sendDrive('SR');" style="width: 10%;" id="srightBtn"><img width="60%" src="/images/s_right.svg"></button>
-            <button class="button" onclick="sendDrive('R');" style="width: 10%;" id="rightBtn"><img width="60%" src="/images/right.svg"></button>
-            <button class="button" onclick="sendDrive('L50');" style="width: 20%;" id="lefthand50"><img height="50%" src="/images/left-hand-half.svg"></button> 
-            <button class="button" onclick="sendDrive('R50');" style="width: 20%;" id="righthand50"><img height="50%" src="/images/right-hand-half.svg"></button>
-            <button class="button" onclick="sendDrive('S');" style="width: 20%;" id="stop"><img height="30%" src="/images/circle-stop-solid.svg"></button> 
+            <button class="button" onclick="sendDrive('L');" style="width: 15%;" id="leftBtn"><img src="/images/left.svg"></button>
+            <button class="button" onclick="sendDrive('S');" style="width: 20%;" id="stop"><img src="/images/circle-stop-solid.svg"></button>             
+            <button class="button" onclick="sendDrive('R');" style="width: 15%;" id="rightBtn"><img src="/images/right.svg"></button>
+            <button class="button" onclick="sendDrive('L50');" style="width: 25%;" id="lefthand50"><img src="/images/left-hand-half.svg"></button> 
+            <button class="button" onclick="sendDrive('R50');" style="width: 25%;" id="righthand50"><img src="/images/right-hand-half.svg"></button>
+            
       
             <!-- Row 3 -->
-            <button class="button" onclick="sendDrive('B');" style="width: 40%;" id="downBtn"><img height="50%" src="/images/down.svg"></button>
-            <button class="button" onclick="sendDrive('L100');" style="width: 20%;" id="lefthand100"><img height="50%" src="/images/left-hand-closed.svg"></button> 
-            <button class="button" onclick="sendDrive('R100');" style="width: 20%;" id="righthand100"><img height="50%" src="/images/right-hand-closed.svg"></button>
-            <button class="button" onclick="sendDrive('TD');" style="width: 20%;" id="tiltDown"><img height="30%" src="/images/PhoneDown.svg"></button> 
+            <button class="button" onclick="sendDrive('B');" style="width: 50%;" id="downBtn"><img src="/images/down.svg"></button>            
+            <button class="button" onclick="sendDrive('TU');" style="width: 25%;" id="tiltUp"><img src="/images/PhoneUp.svg"></button>
+            <button class="button" onclick="sendDrive('TD');" style="width: 25%;" id="tiltDown"><img src="/images/PhoneDown.svg"></button> 
           </div>
 
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
